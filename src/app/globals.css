@@ -25,3 +25,11 @@ body {
     text-wrap: balance;
   }
 }
+
+.title{
+  @apply capitalize col-span-2 text-3xl font-bold;
+}
+
+.cardTwoGrid{
+  @apply min-h-screen capitalize xs:flex-1 sm:grid sm:grid-cols-2 justify-center place-content-center xs:px-5 sm:px-10 md:px-24 lg:px-40 xl:px-64 2xl:px-96;
+}
