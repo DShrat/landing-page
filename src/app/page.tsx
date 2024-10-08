@@ -1,99 +1,10 @@
 "use client"
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from 'react';
-import selfpic from '@/public/selfpicNew.png'
-
-export const skills = [
-  {
-    name: "Javascript",
-    icon: "https://img.icons8.com/?size=100&id=108784&format=png&color=000000",
-  },
-  {
-    name: "Typescript",
-    icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png",
-  },
-  {
-    name: "React",
-    icon: "https://pbs.twimg.com/profile_images/1785867863191932928/EpOqfO6d_400x400.png",
-  },
-  {
-    name: "Vue",
-    icon: "https://img.icons8.com/?size=100&id=rY6agKizO9eb&format=png&color=000000",
-  },
-  {
-    name: "HTML",
-    icon: "https://img.icons8.com/?size=100&id=20909&format=png&color=000000",
-  },
-  {
-    name: "CSS",
-    icon: "https://img.icons8.com/?size=100&id=7gdY5qNXaKC0&format=png&color=000000",
-  },
-  {
-    name: "Tailwinds",
-    icon: "https://logowik.com/content/uploads/images/tailwind-css3232.logowik.com.webp",
-  },
-  {
-    name: "Flutter",
-    icon: "https://storage.googleapis.com/cms-storage-bucket/ec64036b4eacc9f3fd73.svg",
-  },
-  {
-    name: "Python",
-    icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7BF8l33vU2D0uFaqtdV5ullV7adyOIoRtLw&s",
-  },
-  {
-    name: "Docker",
-    icon: "https://www.docker.com/wp-content/uploads/2023/08/logo-guide-logos-1.svg",
-  },
-  {
-    name: "Selenium",
-    icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Selenium_Logo.png/1200px-Selenium_Logo.png",
-  },
-  {
-    name: "Appium",
-    icon: "https://appium.io/docs/en/latest/assets/images/appium-logo-white.png",
-  },
-  {
-    name: "Katalon",
-    icon: "https://d1h3p5fzmizjvp.cloudfront.net/themes/katalon_4/images/header/katalon_logo.svg",
-  },
-  
-]
-
-export const recentProject = [
-  {
-    name: "Klik Fauna",
-    imgUrl: "https://klikfauna.com/assets/logo-23d38f2b.png",
-    decs: "this is a marketplace that focus in pets and pet's things transaction. using vue and css as the front-end technology",
-    link: "https://www.klikfauna.com"
-  },
-  {
-    name: "Nekoya",
-    imgUrl: "https://nekoya.moe.team/img/logo_transparent.webp",
-    decs: "this is a school project, a marketplace that focus at shoes transaction. using javascript and css as the front-end technology",
-    link: "https://nekoya.moe.team/"
-  }
-]
-
-export const experience = [
-  {
-    name: "QA & QC at PT. Widya Presisi Solusi",
-    time: "6 months",
-    decs: "in this job i work as Research and Development, do manual testing and also make script for automatic testing. in some case also do research about why is errors can be occured in hardware side and software side.",
-    skills: [
-      {name: "Selenium"},
-      {name: "Appium"},
-      {name: "Katalon"}
-    ]
-  },
-  {
-    name: "IT Developer at PT. Widya Presisi Solusi",
-    time: "5 months",
-    decs: "in this job i work as IT developer, helping the team to develop mobile app using appery and still do manual testing also making script for automatic testing.",
-    skills: [
-      {name: "Appery"}
-    ]
-  }
-]
+import selfpic from '@/public/selfpicNew.png';
+import { SkillsData } from '@/app/utils/data/skills';
+import { RecentProject } from '@/app/utils/data/project';
+import { Experience } from '@/app/utils/data/experience';
 
 export default function Home() {
   const personalRef = useRef<HTMLElement>(null);
@@ -208,7 +119,7 @@ export default function Home() {
       
       <section ref={recentProjectRef} className='cardTwoGrid bg-slate-400 gap-8'>
         <div className="title xs:my-5 sm:my-0">project</div>
-        {recentProject.map((project, index) => (
+        {RecentProject.map((project, index) => (
           <div key={index}>
             <div className={`group xs:mb-5 sm:mb-0 projectCard grid border-2 p-4 ${isProVisible ? 'animate-zoomIn' : ''}`}>
             {/* <div className={`group projectCard grid border-2 p-4 `}> */}
@@ -231,7 +142,7 @@ export default function Home() {
       
       <section ref={experienceRef} className='cardTwoGrid bg-slate-500 gap-8'>
         <div className="title xs:my-5 sm:my-0">Experience</div>
-        {experience.map((job, index) => (
+        {Experience.map((job, index) => (
           <div key={index}>
             <div className={`jobsCard xs:mb-5 sm:mb-0 border-2 p-4 ${isExVisible ? 'animate-zoomIn' : ''}`}>
             {/* <div className={`jobsCard grid border-2 px-4 rounded-sm py-2`}> */}
@@ -256,7 +167,7 @@ export default function Home() {
 
       <section ref={skillsRef} className='min-h-screen capitalize grid xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-14 justify-center place-content-center xs:pb-5 sm:pb-0 bg-slate-400 xs:px-5 sm:px-14 md:px-32 2xl:px-96'>
         <div className="capitalize xs:col-span-2 sm:col-span-3 md:col-span-4 xl:col-span-5 text-3xl font-bold pt-14">skills</div>
-        {skills.map((skill, index) => (
+        {SkillsData.map((skill, index) => (
           <div key={index}>
             <div className="cardBox grid border-2 p-2">
               <div className="titleCard text-center border-2">
