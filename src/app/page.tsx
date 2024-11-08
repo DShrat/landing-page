@@ -112,7 +112,7 @@ export default function Home() {
         </div>
         <div className={`xs:mt-5 sm:mt-0 sm:min-h-screen capitalize sm:grid place-content-center bg-slate-500 text-justify`}>
           <div className="title">Personal</div>
-          <p>My name is donni suharyanto, i&#39;m passionate at front-end development using javascript either react or vue and also css or tailwinds. i like to work as a team and also like to learn something new. i&#39;m a fresh graduate from tarumanagara university with 3.94 GPA. </p>
+          <p>My name is donni suharyanto, i&#39;m passionate at front-end development using javascript either react or vue and also css or tailwinds. i like to work as a team and also like to learn something new. i&#39;m a fresh graduate from tarumanagara university with 3.96 GPA. </p>
         </div>
         
       </section>
